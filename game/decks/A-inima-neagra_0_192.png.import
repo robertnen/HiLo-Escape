@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5gepskjxg0ds"
-path.s3tc="res://.godot/imported/A-inima-neagra_0_192.png-ee320876474cbdf63aa136af88df8b90.s3tc.ctex"
+uid="uid://dclbjpgrryv54"
+path.s3tc="res://.godot/imported/A-inima-neagra_0_192.png-d73cbdc639f0e0e37c82dcb4eaa5302f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "e2690f624fca67a0031b69eaebf2b69c"
-}
 
 [deps]
 
-source_file="res://A-inima-neagra_0_192.png"
-dest_files=["res://.godot/imported/A-inima-neagra_0_192.png-ee320876474cbdf63aa136af88df8b90.s3tc.ctex"]
+source_file="res://decks/A-inima-neagra_0_192.png"
+dest_files=["res://.godot/imported/A-inima-neagra_0_192.png-d73cbdc639f0e0e37c82dcb4eaa5302f.s3tc.ctex"]
 
 [params]
 

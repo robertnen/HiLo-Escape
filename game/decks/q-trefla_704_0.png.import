@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbqyhvwhfjfua"
-path.s3tc="res://.godot/imported/q-trefla_704_0.png-05ad26e6dbe658e4d46f23fad5bc6563.s3tc.ctex"
+uid="uid://chsw51gpbuwmb"
+path.s3tc="res://.godot/imported/q-trefla_704_0.png-79cae82fd4e637ecb125754d75b5a4d1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "57801c3db3b356fbebff9827e6aa753c"
-}
 
 [deps]
 
-source_file="res://q-trefla_704_0.png"
-dest_files=["res://.godot/imported/q-trefla_704_0.png-05ad26e6dbe658e4d46f23fad5bc6563.s3tc.ctex"]
+source_file="res://decks/q-trefla_704_0.png"
+dest_files=["res://.godot/imported/q-trefla_704_0.png-79cae82fd4e637ecb125754d75b5a4d1.s3tc.ctex"]
 
 [params]
 

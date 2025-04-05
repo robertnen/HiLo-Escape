@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bcmgewtw0vbjv"
-path="res://.godot/imported/8-inima-rosie.glb-ca3447dac177980700a88e0eab9601c5.scn"
+uid="uid://dofycbuda5fyy"
+path="res://.godot/imported/8-inima-rosie.glb-d0714d45bf13bcad4651eb2d1b2fbba8.scn"
 
 [deps]
 
-source_file="res://8-inima-rosie.glb"
-dest_files=["res://.godot/imported/8-inima-rosie.glb-ca3447dac177980700a88e0eab9601c5.scn"]
+source_file="res://decks/8-inima-rosie.glb"
+dest_files=["res://.godot/imported/8-inima-rosie.glb-d0714d45bf13bcad4651eb2d1b2fbba8.scn"]
 
 [params]
 

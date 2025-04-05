@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckbhrjxs6a42e"
-path.s3tc="res://.godot/imported/Untitled-spate_256_384.png-daba77b9d12b2f14a36476e1c16b2ba6.s3tc.ctex"
+uid="uid://cwcdcsdmx5bok"
+path.s3tc="res://.godot/imported/Untitled-spate_256_384.png-557099204c3ffd4065d6929a0abae1cf.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "3c3678af489840497e4d09dca8fe4e6a"
-}
 
 [deps]
 
-source_file="res://Untitled-spate_256_384.png"
-dest_files=["res://.godot/imported/Untitled-spate_256_384.png-daba77b9d12b2f14a36476e1c16b2ba6.s3tc.ctex"]
+source_file="res://decks/Untitled-spate_256_384.png"
+dest_files=["res://.godot/imported/Untitled-spate_256_384.png-557099204c3ffd4065d6929a0abae1cf.s3tc.ctex"]
 
 [params]
 

@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ghoqxqbwjera"
-path.s3tc="res://.godot/imported/7-caro_384_288.png-8c0aeef63e28a9db35b33acb6b07e205.s3tc.ctex"
+uid="uid://b52dn1jq4xq2r"
+path.s3tc="res://.godot/imported/7-caro_384_288.png-95e301360f64e4beca5dc9288609d47d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "15fb41691ba022a7ce1caebe41e4840d"
-}
 
 [deps]
 
-source_file="res://7-caro_384_288.png"
-dest_files=["res://.godot/imported/7-caro_384_288.png-8c0aeef63e28a9db35b33acb6b07e205.s3tc.ctex"]
+source_file="res://decks/7-caro_384_288.png"
+dest_files=["res://.godot/imported/7-caro_384_288.png-95e301360f64e4beca5dc9288609d47d.s3tc.ctex"]
 
 [params]
 

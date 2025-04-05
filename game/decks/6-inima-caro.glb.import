@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ngho4m5xb2j1"
-path="res://.godot/imported/6-inima-caro.glb-525da342fa5b3ba18220108ec5f49655.scn"
+uid="uid://bcs16bh3u3l32"
+path="res://.godot/imported/6-inima-caro.glb-e66f433933ff26e1fe703c4b52eb7411.scn"
 
 [deps]
 
-source_file="res://6-inima-caro.glb"
-dest_files=["res://.godot/imported/6-inima-caro.glb-525da342fa5b3ba18220108ec5f49655.scn"]
+source_file="res://decks/6-inima-caro.glb"
+dest_files=["res://.godot/imported/6-inima-caro.glb-e66f433933ff26e1fe703c4b52eb7411.scn"]
 
 [params]
 

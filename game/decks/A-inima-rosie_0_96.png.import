@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eedhrnpqs6mv"
-path.s3tc="res://.godot/imported/A-inima-rosie_0_96.png-488c22ecad9937b70c6a5ff4bf6d4ca4.s3tc.ctex"
+uid="uid://hqxvbwbcfvfu"
+path.s3tc="res://.godot/imported/A-inima-rosie_0_96.png-732b6da98d348b032fefd4e009e65cb0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "c6c1f2029410db77e03bb73ca02a153c"
-}
 
 [deps]
 
-source_file="res://A-inima-rosie_0_96.png"
-dest_files=["res://.godot/imported/A-inima-rosie_0_96.png-488c22ecad9937b70c6a5ff4bf6d4ca4.s3tc.ctex"]
+source_file="res://decks/A-inima-rosie_0_96.png"
+dest_files=["res://.godot/imported/A-inima-rosie_0_96.png-732b6da98d348b032fefd4e009e65cb0.s3tc.ctex"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cwxsdrdrgcgn6"
-path="res://.godot/imported/test_spate.glb-bcbb826ffff9613544954bd0b8551196.scn"
+uid="uid://dyc87w37f3gva"
+path="res://.godot/imported/test_spate.glb-343f3368b9942f32efcb505d303920f4.scn"
 
 [deps]
 
-source_file="res://test_spate.glb"
-dest_files=["res://.godot/imported/test_spate.glb-bcbb826ffff9613544954bd0b8551196.scn"]
+source_file="res://decks/test_spate.glb"
+dest_files=["res://.godot/imported/test_spate.glb-343f3368b9942f32efcb505d303920f4.scn"]
 
 [params]
 

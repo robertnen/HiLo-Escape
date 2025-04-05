@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://8ogt1804v6uv"
-path="res://.godot/imported/5-caro.glb-02e6d17be5ee7f85d765940a3eba427f.scn"
+uid="uid://y78ae1tqmtcn"
+path="res://.godot/imported/5-caro.glb-51c0449f2641349c5cb0f3cfaf75bff7.scn"
 
 [deps]
 
-source_file="res://5-caro.glb"
-dest_files=["res://.godot/imported/5-caro.glb-02e6d17be5ee7f85d765940a3eba427f.scn"]
+source_file="res://decks/5-caro.glb"
+dest_files=["res://.godot/imported/5-caro.glb-51c0449f2641349c5cb0f3cfaf75bff7.scn"]
 
 [params]
 

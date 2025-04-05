@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bl5cynrdft411"
-path="res://.godot/imported/A-inima-neagra.glb-19409b3ed94832436666273372a7f509.scn"
+uid="uid://carorj2quk2ex"
+path="res://.godot/imported/A-inima-neagra.glb-c1d77bd5044d8df75cc126eae8718b1e.scn"
 
 [deps]
 
-source_file="res://A-inima-neagra.glb"
-dest_files=["res://.godot/imported/A-inima-neagra.glb-19409b3ed94832436666273372a7f509.scn"]
+source_file="res://decks/A-inima-neagra.glb"
+dest_files=["res://.godot/imported/A-inima-neagra.glb-c1d77bd5044d8df75cc126eae8718b1e.scn"]
 
 [params]
 

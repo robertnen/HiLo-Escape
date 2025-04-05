@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dvt5dg2u10fy"
-path="res://.godot/imported/5-trefla.glb-b6fed5b55ea163274912d0d50f663315.scn"
+uid="uid://1hxlh5pkuk7x"
+path="res://.godot/imported/5-trefla.glb-ca9ef78f6d2c6fe14e08f179fba8516e.scn"
 
 [deps]
 
-source_file="res://5-trefla.glb"
-dest_files=["res://.godot/imported/5-trefla.glb-b6fed5b55ea163274912d0d50f663315.scn"]
+source_file="res://decks/5-trefla.glb"
+dest_files=["res://.godot/imported/5-trefla.glb-ca9ef78f6d2c6fe14e08f179fba8516e.scn"]
 
 [params]
 
