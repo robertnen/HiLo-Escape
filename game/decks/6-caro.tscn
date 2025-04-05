@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ld0018rlyiii"]
+
+[ext_resource type="PackedScene" uid="uid://d0wx8tc8y1asw" path="res://Untitled-spate.glb" id="1_i15tw"]
+[ext_resource type="PackedScene" uid="uid://ngho4m5xb2j1" path="res://6-inima-caro.glb" id="2_idx43"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="spate" parent="." instance=ExtResource("1_i15tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+
+[node name="6-caro" parent="." instance=ExtResource("2_idx43")]

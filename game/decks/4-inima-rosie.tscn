@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2x23wbr2g2ij"]
+
+[ext_resource type="PackedScene" uid="uid://d0wx8tc8y1asw" path="res://Untitled-spate.glb" id="1_q4sb0"]
+[ext_resource type="PackedScene" uid="uid://bwtuglwljlsbq" path="res://4-inima-rosie.glb" id="2_k17f3"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="spate" parent="." instance=ExtResource("1_q4sb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+
+[node name="4-inima-rosie" parent="." instance=ExtResource("2_k17f3")]
