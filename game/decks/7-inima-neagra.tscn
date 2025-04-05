@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://w5bkhrmrmdtv"]
 
-[ext_resource type="PackedScene" uid="uid://d0wx8tc8y1asw" path="res://Untitled-spate.glb" id="1_shugq"]
-[ext_resource type="PackedScene" uid="uid://bd523kecpn0kf" path="res://7-inima-neagra.glb" id="2_bi6pw"]
+[ext_resource type="PackedScene" uid="uid://b32sidspjgxcy" path="res://Untitled-spate.glb" id="1_shugq"]
+[ext_resource type="PackedScene" uid="uid://d3tndt18u72nh" path="res://7-inima-neagra.glb" id="2_bi6pw"]
 
 [node name="Node3D" type="Node3D"]
 

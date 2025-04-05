@@ -16,6 +16,8 @@ extends Node3D
 @onready var ending = $ending
 var is_ending: bool = false
 
+const TIME_BETWEEN_ROUNDS = 5 # seconds
+
 var level = 0
 # 0 - inceput, prea devreme
 # 1 - prima runda - de aici se poate da save
@@ -108,6 +110,9 @@ func start_game():
 	
 	eye_time_to_start = randi() % 1 + 3
 	eye_time_to_start_2 = randi() % 1 + 5
+
+func display_cards():
+	pass
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause") and is_menu == false:
@@ -236,6 +241,15 @@ func toggle_pause(delta: float):
 		
 	if eye_flag_2 and !is_paused:
 		eye_audio_2.stream_paused = false
+		
+	if ending and is_paused:
+		ending.stream_paused = true
+		anim_bad_ending_1.stop()
+		
+	if ending and !is_paused:
+		ending.stream_paused = false
+		anim_bad_ending_1.get_animation("ATK").loop = true
+		anim_bad_ending_1.play("ATK")
 		
 	get_tree().paused = is_paused
 	asp.stream_paused = !asp.stream_paused

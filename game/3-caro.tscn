@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpdlukl8th3v3"]
+
+[ext_resource type="PackedScene" uid="uid://d0wx8tc8y1asw" path="res://Untitled-spate.glb" id="1_nhrxx"]
+[ext_resource type="PackedScene" uid="uid://p72anc0qcom0" path="res://3-caro.glb" id="2_toanh"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="spate" parent="." instance=ExtResource("1_nhrxx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+
+[node name="3-caro" parent="." instance=ExtResource("2_toanh")]

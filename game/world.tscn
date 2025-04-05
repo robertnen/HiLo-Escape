@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bm2fl17i7tjk7"]
+[gd_scene load_steps=18 format=3 uid="uid://bm2fl17i7tjk7"]
 
 [ext_resource type="Script" uid="uid://doq83vcgqa32o" path="res://world.gd" id="1_dwbse"]
 [ext_resource type="PackedScene" uid="uid://c451bcyjbqphn" path="res://abandoned_house.tscn" id="1_f3sb7"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://lwi4xpb1atsr" path="res://nightmare_girl_sketchfab.tscn" id="4_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://dapq5l70135ra" path="res://eye/eye.gltf" id="7_pkg7o"]
 [ext_resource type="PackedScene" uid="uid://diedce1pwlje3" path="res://eye_modified.tscn" id="10_wse8f"]
+[ext_resource type="PackedScene" path="res://2-caro.tscn" id="11_ic0uy"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_aqk2v"]
 
@@ -95,3 +96,6 @@ visible = false
 
 [node name="ending" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.305, 1.295, -120.759)
+
+[node name="Fata_de_masa" parent="." instance=ExtResource("11_ic0uy")]
+transform = Transform3D(4.37114e-08, 3.82137e-15, -1, 8.74228e-08, -1, 0, -1, -8.74228e-08, -4.37114e-08, -31.9066, 0.696925, -120.741)
