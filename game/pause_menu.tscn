@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://ceks6tixytqty"]
+
+[sub_resource type="Theme" id="Theme_wyi4u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdmo1"]
+bg_color = Color(0.21822, 0.325611, 0.199292, 1)
+draw_center = false
+border_color = Color(0.218195, 0.895133, 0.979538, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Theme" id="Theme_nwcfo"]
+default_font_size = 19
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wyi4u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwcfo"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="PauseMenu" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+custom_minimum_size = Vector2(600, 300)
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 601.0
+offset_bottom = 298.0
+theme = SubResource("Theme_wyi4u")
+theme_override_styles/panel = SubResource("StyleBoxFlat_hdmo1")
+
+[node name="Continue_btn" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 151.0
+offset_bottom = 36.0
+theme = SubResource("Theme_nwcfo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wyi4u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nwcfo")
+text = "Continue Game"
+metadata/_edit_use_anchors_ = true
+
+[node name="Save_btn" type="Button" parent="CanvasLayer/Panel"]
+offset_top = 49.0
+offset_right = 166.0
+offset_bottom = 84.0
+theme = SubResource("Theme_nwcfo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wyi4u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nwcfo")
+text = "Save Game"
+metadata/_edit_use_anchors_ = true
+
+[node name="Menu_btn" type="Button" parent="CanvasLayer/Panel"]
+offset_left = 1.0
+offset_top = 100.0
+offset_right = 189.0
+offset_bottom = 135.0
+theme = SubResource("Theme_nwcfo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wyi4u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nwcfo")
+text = "Exit to Main Menu
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit_btn" type="Button" parent="CanvasLayer/Panel"]
+offset_top = 148.0
+offset_right = 214.0
+offset_bottom = 183.0
+theme = SubResource("Theme_nwcfo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wyi4u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nwcfo")
+text = "Quit"
+metadata/_edit_use_anchors_ = true

@@ -3,6 +3,10 @@ extends Node3D
 @onready var asp = $Music
 @onready var bec = $Bec
 @onready var cam = $Camera3D
+@onready var pause_menu = $PauseMenu
+@onready var pause_panel = $PauseMenu/CanvasLayer
+
+var is_paused = false
 
 const VOLUME_DB = -21.333 # pt streaming
 const EYE_DURATION = 14
@@ -38,9 +42,13 @@ var eye_flag_2 = false;
 @onready var eye_audio_2 = $eye2/eye_stream_2
 
 func _ready() -> void:
-	# ascunde cursorul
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	
+	# ascunde lucruri
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	pause_menu.visible = false
+	pause_panel.visible = false
+
 	# media player-ul cu ost-ul jocului
 	randomize()
 	var chosen_path = music_paths[randi() % music_paths.size()]
@@ -61,17 +69,18 @@ func _ready() -> void:
 	# luminca de la bef, efect fade-in
 	bec.light_energy = 0.
 	
-	eye_time_to_start = randi() % 1 + 1
-	eye_time_to_start_2 = randi() % 1 + 20
+	eye_time_to_start = randi() % 10 + 10
+	eye_time_to_start_2 = randi() % 10 + 20
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		asp.stream_paused = !asp.stream_paused
+		toggle_pause(delta)
 		
 	if Input.is_action_just_pressed("fullscreen_toggle"):
 		toggle_fullscreen()
 		
-	if time_elapsed < fade_duration:
+	if time_elapsed < fade_duration && fade_duration != 0:
 		bec.light_energy = lerp(0., light_target, time_elapsed / fade_duration)
 	
 	time_elapsed += delta
@@ -91,10 +100,9 @@ func _process(delta: float) -> void:
 			eye_audio.play()
 			asp.volume_db -= 10
 			
-		var rot = cam.rotation
 		var yaw_deg = rad_to_deg(cam.rotation.y)
 
-		if abs(yaw_deg - 60) < 5:
+		if abs(yaw_deg - -120) < 5:
 			eye_audio.stop()
 			asp.volume_db += 10
 			eye_flag = false
@@ -108,6 +116,28 @@ func _process(delta: float) -> void:
 		
 		eye_elapsed += delta
 		
+	if game_elapsed_time >= eye_time_to_start_2:
+		if eye_flag_2 == false:
+			eye_2.show()
+			eye_flag_2 = true
+			eye_audio_2.play()
+			asp.volume_db -= 10
+			
+		var yaw_deg = rad_to_deg(cam.rotation.y)
+
+		if abs(yaw_deg - 60) < 5:
+			eye_audio_2.stop()
+			asp.volume_db += 10
+			eye_flag_2 = false
+			eye_2.hide()
+			eye_time_to_start_2 = game_elapsed_time + randi() % 50
+			eye_elapsed_2 = 0
+			
+		if eye_elapsed_2 > EYE_DURATION:
+			eye_audio_2.stop()
+			# adauga ending
+		
+		eye_elapsed_2 += delta
 
 func toggle_fullscreen():
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_WINDOWED:
@@ -119,3 +149,17 @@ func _on_song_finished():
 	var chosen_path = music_paths[randi() % music_paths.size()]
 	asp.stream = load(chosen_path)
 	asp.play()
+
+func toggle_pause(delta: float):
+	is_paused = !is_paused
+	get_tree().paused = is_paused
+	pause_menu.visible = is_paused
+	pause_panel.visible = is_paused
+	if is_paused:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		bec.light_energy = 0.5
+		eye_time_to_start += delta
+		eye_time_to_start_2 += delta
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+		bec.light_energy = light_target
