@@ -1,9 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://dp7bekh8d45j2"]
 
 [ext_resource type="Script" uid="uid://cvww87i7xeknn" path="res://AudioSettings.gd" id="1_06t4h"]
-[ext_resource type="Script" uid="uid://dclmpyoeydoj2" path="res://main_menu.gd" id="1_7vrkn"]
+[ext_resource type="Script" uid="uid://dbf4aso80bbao" path="res://main_menu.gd" id="1_7vrkn"]
 
 [sub_resource type="SystemFont" id="SystemFont_rhts7"]
+subpixel_positioning = 0
 
 [node name="Main Menu" type="CanvasLayer"]
 script = ExtResource("1_7vrkn")
@@ -56,6 +57,7 @@ alignment = 0
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 30
+disabled = true
 text = "Continue Game"
 alignment = 0
 
@@ -63,6 +65,7 @@ alignment = 0
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 30
+disabled = true
 text = "Load Game"
 alignment = 0
 
@@ -81,7 +84,6 @@ text = "Quit"
 alignment = 0
 
 [node name="Settings" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -152,6 +154,7 @@ offset_left = 919.0
 offset_top = 200.0
 offset_right = 941.112
 offset_bottom = 211.688
+button_pressed = true
 
 [node name="Music_Volume" type="Label" parent="Settings"]
 layout_mode = 0
@@ -173,17 +176,19 @@ text = "SFX volume"
 
 [node name="Volume_Slider" type="HSlider" parent="Settings"]
 layout_mode = 0
-offset_left = 399.0
-offset_top = 506.0
-offset_right = 745.0
-offset_bottom = 522.0
-
-[node name="SFX_Slider" type="HSlider" parent="Settings"]
-layout_mode = 0
 offset_left = 398.0
 offset_top = 439.0
 offset_right = 744.0
 offset_bottom = 455.0
+value = 50.0
+
+[node name="SFX_Slider" type="HSlider" parent="Settings"]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 506.0
+offset_right = 744.0
+offset_bottom = 522.0
+value = 50.0
 
 [node name="Back_Button" type="Button" parent="Settings"]
 layout_mode = 0

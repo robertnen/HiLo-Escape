@@ -9,6 +9,15 @@ extends Node3D
 @onready var start_button = $"Main Menu/Menu/MarginContainer/VBoxContainer/StartGameButton"
 @onready var menu_panel = $"Main Menu"
 
+@onready var pause_continue_btn = $PauseMenu/CanvasLayer/Panel/Continue_btn
+@onready var pause_exit_menu_btn = $PauseMenu/CanvasLayer/Panel/Menu_btn
+@onready var pause_exit_btn = $PauseMenu/CanvasLayer/Panel/Quit_btn
+
+var level = 0
+# 0 - inceput, prea devreme
+# 1 - prima runda - de aici se poate da save
+# ...
+
 var is_paused = false
 var is_menu = true
 
@@ -46,27 +55,41 @@ var eye_flag_2 = false;
 @onready var eye_audio_2 = $eye2/eye_stream_2
 
 func _ready() -> void:
+	asp.volume_db = VOLUME_DB
+	eye_audio.volume_db = 5
+	eye_audio_2.volume_db = 5
+	AudioServer.set_bus_volume_db(0, volume)
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	
-	# ascunde lucruri
+	start_button.connect("pressed", Callable(self, "_start_game"))
+	pause_continue_btn.connect("pressed", Callable(self, "_continue_game"))
+	pause_exit_menu_btn.connect("pressed", Callable(self, "_exit_to_menu"))
+	pause_exit_btn.connect("pressed", Callable(self, "_exit_game"))
+	
+	start_game()
+
+func start_game():
+	Input.warp_mouse(Vector2(1583.0, 84.0))
+	
+	cam.rotate_x(-14.3)
+	cam.rotate_y(-77.2)
+	cam.rotate_z(0.0)
+	
+	game_elapsed_time = 0
+	time_elapsed = 0
+	
+		# ascunde lucruri
 	pause_menu.visible = false
 	pause_panel.visible = false
-	
-	start_button.connect("pressed", Callable(self, "_start_game"));
 
 	# media player-ul cu ost-ul jocului
 	randomize()
 	var chosen_path = music_paths[randi() % music_paths.size()]
 	
-	asp.volume_db = VOLUME_DB
-	eye_audio.volume_db = 5
-	eye_audio_2.volume_db = 5
-	
 	eye_audio.stream = load("res://music/lala.mp3")
 	eye_audio_2.stream = load("res://music/lala.mp3")
 	
 	asp.stream = load(chosen_path)
-	AudioServer.set_bus_volume_db(0, volume)
 	asp.play()
 	
 	asp.finished.connect(_on_song_finished)
@@ -74,21 +97,22 @@ func _ready() -> void:
 	# luminca de la bef, efect fade-in
 	bec.light_energy = 0.
 	
-	eye_time_to_start = randi() % 10 + 10
-	eye_time_to_start_2 = randi() % 10 + 20
+	eye_time_to_start = randi() % 1 + 3
+	eye_time_to_start_2 = randi() % 1 + 5
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("pause") and is_menu == false:
 		asp.stream_paused = !asp.stream_paused
 		toggle_pause(delta)
 		
 	if Input.is_action_just_pressed("fullscreen_toggle"):
 		toggle_fullscreen()
 		
-	if is_menu:
+	if is_menu or is_paused:
 		return
 		
 	if time_elapsed < fade_duration && fade_duration != 0:
+		@warning_ignore("integer_division")
 		bec.light_energy = lerp(0., light_target, time_elapsed / fade_duration)
 	
 	time_elapsed += delta
@@ -110,7 +134,7 @@ func _process(delta: float) -> void:
 			
 		var yaw_deg = rad_to_deg(cam.rotation.y)
 
-		if abs(yaw_deg - -120) < 5:
+		if abs(yaw_deg - -60) < 5:
 			eye_audio.stop()
 			asp.volume_db += 10
 			eye_flag = false
@@ -133,7 +157,7 @@ func _process(delta: float) -> void:
 			
 		var yaw_deg = rad_to_deg(cam.rotation.y)
 
-		if abs(yaw_deg - 60) < 5:
+		if abs(yaw_deg - -120) < 5:
 			eye_audio_2.stop()
 			asp.volume_db += 10
 			eye_flag_2 = false
@@ -160,7 +184,21 @@ func _on_song_finished():
 
 func toggle_pause(delta: float):
 	is_paused = !is_paused
+
+	if eye_flag and is_paused:
+		eye_audio.stream_paused = true
+		
+	if eye_flag and !is_paused:
+		eye_audio.stream_paused = false
+		
+	if eye_flag_2 and is_paused:
+		eye_audio_2.stream_paused = true
+		
+	if eye_flag_2 and !is_paused:
+		eye_audio_2.stream_paused = false
+		
 	get_tree().paused = is_paused
+	asp.play()
 	pause_menu.visible = is_paused
 	pause_panel.visible = is_paused
 	if is_paused:
@@ -177,3 +215,18 @@ func _start_game():
 	menu_panel.visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	
+	start_game()
+	
+func _continue_game():
+		asp.stream_paused = !asp.stream_paused
+		toggle_pause(0)
+		
+func _exit_to_menu():
+		is_paused = false
+		is_menu = true
+		pause_panel.visible = false
+		menu_panel.visible = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
+func _exit_game():
+	get_tree().quit()
