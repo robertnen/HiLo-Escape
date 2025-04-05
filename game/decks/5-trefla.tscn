@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2t3f306oxf1p"]
+
+[ext_resource type="PackedScene" uid="uid://d0wx8tc8y1asw" path="res://Untitled-spate.glb" id="1_cwsoj"]
+[ext_resource type="PackedScene" uid="uid://dvt5dg2u10fy" path="res://5-trefla.glb" id="2_so747"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="spate" parent="." instance=ExtResource("1_cwsoj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+
+[node name="5-trefla" parent="." instance=ExtResource("2_so747")]
