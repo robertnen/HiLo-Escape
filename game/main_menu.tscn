@@ -1,0 +1,196 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp7bekh8d45j2"]
+
+[ext_resource type="Script" uid="uid://cvww87i7xeknn" path="res://AudioSettings.gd" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://dclmpyoeydoj2" path="res://main_menu.gd" id="1_7vrkn"]
+
+[sub_resource type="SystemFont" id="SystemFont_rhts7"]
+
+[node name="Main Menu" type="CanvasLayer"]
+script = ExtResource("1_7vrkn")
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 56
+text = "HiLo Escape"
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 24
+
+[node name="StartGameButton" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = SubResource("SystemFont_rhts7")
+theme_override_font_sizes/font_size = 30
+text = "New Game"
+alignment = 0
+
+[node name="ContinueButton" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "Continue Game"
+alignment = 0
+
+[node name="LoadButton" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "Load Game"
+alignment = 0
+
+[node name="SettingsButton" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "Settings"
+alignment = 0
+
+[node name="ExitButton" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+alignment = 0
+
+[node name="Settings" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06t4h")
+
+[node name="Settings" type="Label" parent="Settings"]
+layout_mode = 2
+offset_left = -40.0
+offset_top = 13.0
+offset_right = 1112.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 30
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="AudioSettings" type="Label" parent="Settings"]
+layout_mode = 2
+offset_left = 126.0
+offset_top = 356.0
+offset_right = 279.0
+offset_bottom = 387.0
+theme_override_font_sizes/font_size = 22
+text = "Audio Settings"
+
+[node name="VideoSettings" type="Label" parent="Settings"]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 111.0
+offset_right = 305.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 22
+text = "Video Settings"
+
+[node name="Resolution" type="Label" parent="Settings"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 155.0
+offset_top = 198.0
+offset_right = 239.0
+offset_bottom = 221.0
+text = "Resolution"
+
+[node name="ResolutionChangeOption" type="OptionButton" parent="Settings"]
+layout_mode = 0
+offset_left = 389.0
+offset_top = 198.0
+offset_right = 481.0
+offset_bottom = 218.0
+
+[node name="Shadows" type="Label" parent="Settings"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 732.0
+offset_top = 199.0
+offset_right = 816.0
+offset_bottom = 222.0
+text = "Shadows"
+
+[node name="CheckButton" type="CheckButton" parent="Settings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.019
+anchor_bottom = 0.019
+offset_left = 919.0
+offset_top = 200.0
+offset_right = 941.112
+offset_bottom = 211.688
+
+[node name="Music_Volume" type="Label" parent="Settings"]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 431.0
+offset_right = 256.0
+offset_bottom = 454.0
+theme_override_font_sizes/font_size = 16
+text = "Music volume"
+
+[node name="SFX_Volume" type="Label" parent="Settings"]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 500.0
+offset_right = 264.0
+offset_bottom = 523.0
+theme_override_font_sizes/font_size = 16
+text = "SFX volume"
+
+[node name="Volume_Slider" type="HSlider" parent="Settings"]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 506.0
+offset_right = 745.0
+offset_bottom = 522.0
+
+[node name="SFX_Slider" type="HSlider" parent="Settings"]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 439.0
+offset_right = 744.0
+offset_bottom = 455.0
+
+[node name="Back_Button" type="Button" parent="Settings"]
+layout_mode = 0
+offset_left = 513.0
+offset_top = 590.0
+offset_right = 641.0
+offset_bottom = 598.0
+text = "Back"
+
+[connection signal="item_selected" from="Settings/ResolutionChangeOption" to="Settings" method="_on_resolution_change_option_item_selected"]

@@ -15,7 +15,7 @@ func _ready():
 	pitch = rot.x
 
 func _input(event: InputEvent) -> void:
-	if !get_parent().is_paused and event is InputEventMouseMotion:
+	if !get_parent().is_paused and !get_parent().is_menu and event is InputEventMouseMotion:
 		var delta_yaw = -event.relative.x * 0.01
 		var delta_pitch = -event.relative.y * 0.01
 

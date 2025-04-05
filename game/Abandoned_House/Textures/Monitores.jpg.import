@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wok8twambf1q"
-path.s3tc="res://.godot/imported/Monitores.jpg-c92fd051e67e84888680eaa5364ba2df.s3tc.ctex"
+path.s3tc="res://.godot/imported/Monitores.jpg-509b629f73820da5c43ed253d4ab7ee6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Abandoned_House/textures/Monitores.jpg"
-dest_files=["res://.godot/imported/Monitores.jpg-c92fd051e67e84888680eaa5364ba2df.s3tc.ctex"]
+source_file="res://Abandoned_House/Textures/Monitores.jpg"
+dest_files=["res://.godot/imported/Monitores.jpg-509b629f73820da5c43ed253d4ab7ee6.s3tc.ctex"]
 
 [params]
 

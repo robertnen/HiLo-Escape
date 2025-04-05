@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://bm2fl17i7tjk7"]
+[gd_scene load_steps=16 format=3 uid="uid://bm2fl17i7tjk7"]
 
 [ext_resource type="Script" uid="uid://doq83vcgqa32o" path="res://world.gd" id="1_dwbse"]
 [ext_resource type="PackedScene" uid="uid://c451bcyjbqphn" path="res://abandoned_house.tscn" id="1_f3sb7"]
 [ext_resource type="PackedScene" uid="uid://ceks6tixytqty" path="res://pause_menu.tscn" id="2_gbfbk"]
+[ext_resource type="PackedScene" uid="uid://dp7bekh8d45j2" path="res://main_menu.tscn" id="2_ioo17"]
 [ext_resource type="PackedScene" uid="uid://cgwbi7tq4t2ay" path="res://RandomObjects/phone/phone_low.glb" id="2_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://dsmb8k2x52iht" path="res://case_low_.tscn" id="3_aqk2v"]
 [ext_resource type="Script" uid="uid://d0q43hcnxts6q" path="res://camera_3d.gd" id="4_036b0"]
@@ -29,6 +30,8 @@ ambient_light_energy = 0.27
 
 [node name="world" type="Node3D"]
 script = ExtResource("1_dwbse")
+
+[node name="Main Menu" parent="." instance=ExtResource("2_ioo17")]
 
 [node name="Abandoned_House2" parent="." instance=ExtResource("1_f3sb7")]
 
