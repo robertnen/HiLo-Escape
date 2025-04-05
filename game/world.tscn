@@ -92,3 +92,6 @@ position = Vector2(70, 145)
 [node name="eye3" parent="." instance=ExtResource("10_wse8f")]
 transform = Transform3D(0.0510861, 0.00603496, -0.0857542, -0.00592702, 0.0997632, 0.00348995, 0.0857617, 0.00329979, 0.0513228, -32.305, 1.295, -120.759)
 visible = false
+
+[node name="ending" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.305, 1.295, -120.759)

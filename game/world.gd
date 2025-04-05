@@ -13,6 +13,9 @@ extends Node3D
 @onready var pause_exit_menu_btn = $PauseMenu/CanvasLayer/Panel/Menu_btn
 @onready var pause_exit_btn = $PauseMenu/CanvasLayer/Panel/Quit_btn
 
+@onready var ending = $ending
+var is_ending: bool = false
+
 var level = 0
 # 0 - inceput, prea devreme
 # 1 - prima runda - de aici se poate da save
@@ -61,6 +64,7 @@ func _ready() -> void:
 	asp.volume_db = VOLUME_DB
 	eye_audio.volume_db = 5
 	eye_audio_2.volume_db = 5
+	ending.volume_db = 5
 	AudioServer.set_bus_volume_db(0, volume)
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	
@@ -145,19 +149,30 @@ func _process(delta: float) -> void:
 			
 		if eye_elapsed > EYE_DURATION:
 			eye_audio.stop()
-			eye_3.visible = true
+			eye_audio_2.stop()
 			Input.warp_mouse(Vector2(1483.0, 153.0))
-			anim_bad_ending_1.get_animation("ATK").loop = true
-			anim_bad_ending_1.play("ATK")
 			
-			if eye_elapsed > EYE_DURATION + 6.3:
+			if !is_ending:
+				ending.stream = load("res://music/bad_end_cut_1.mp3")
+				ending.play()
+				is_ending = true
+				eye_3.visible = true
+				anim_bad_ending_1.get_animation("ATK").loop = true
+				anim_bad_ending_1.play("ATK")
+
+			if eye_elapsed > EYE_DURATION + 3:
 				anim_bad_ending_1.stop()
 				eye_3.visible = false
+				is_ending = false;
+				ending.stop()
 				_exit_to_menu()
 		
 		eye_elapsed += delta
 		
 	if game_elapsed_time >= eye_time_to_start_2:
+		eye_time_to_start = 100000
+		eye_audio.stop()
+
 		if eye_flag_2 == false:
 			eye_2.show()
 			eye_flag_2 = true
@@ -175,8 +190,24 @@ func _process(delta: float) -> void:
 			eye_elapsed_2 = 0
 			
 		if eye_elapsed_2 > EYE_DURATION:
+			eye_audio.stop()
 			eye_audio_2.stop()
-			# adauga ending
+			Input.warp_mouse(Vector2(1433.0, 123.0))
+			
+			if !is_ending:
+				ending.stream = load("res://music/bad_end_cut_1.mp3")
+				ending.play()
+				is_ending = true
+				eye_3.visible = true
+				anim_bad_ending_1.get_animation("ATK").loop = true
+				anim_bad_ending_1.play("ATK")
+
+			if eye_elapsed_2 > EYE_DURATION + 3:
+				anim_bad_ending_1.stop()
+				eye_3.visible = false
+				is_ending = false;
+				ending.stop()
+				_exit_to_menu()
 		
 		eye_elapsed_2 += delta
 

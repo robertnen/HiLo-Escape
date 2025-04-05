@@ -21,6 +21,7 @@ func _on_SFX_Slider_value_changed(value):
 	world.volume_sfx = -80 + -1. * value / 50. * (-80)
 	world.eye_audio.volume_db = world.volume_sfx
 	world.eye_audio_2.volume_db = world.volume_sfx
+	world.ending.volume_db = world.volume_sfx
 
 func linear_to_db(value: float) -> float:
 	if value <= 0.0:
