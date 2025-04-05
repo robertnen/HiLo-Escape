@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp54h5w8uu38b"
+uid="uid://cdcw1x5akvlqv"
 path.s3tc="res://.godot/imported/stool_001_ImphenziaPalette01-256-Gradient.png-a0c000add81cf1de79bed6f5a5815bc9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "507b00d35d0f3012a9e79196c4d862cf"
 }
 
 [deps]

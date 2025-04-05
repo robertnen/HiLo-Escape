@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmfoluv7dvlbw"
+uid="uid://clq3e68ex0xqr"
 path.s3tc="res://.godot/imported/painting_002_ImphenziaPalette01-256-Gradient.png-1025caf0f7c83ad9cf1be3b857d569bf.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "507b00d35d0f3012a9e79196c4d862cf"
 }
 
 [deps]

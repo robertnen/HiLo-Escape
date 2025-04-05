@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3ob01cwstt7r"
-path.s3tc="res://.godot/imported/Muro.jpg-082f3d14fdd6eae0510159a17ee5d3a4.s3tc.ctex"
+path.s3tc="res://.godot/imported/Muro.jpg-b72a0e3320991b61a051031a51c718f7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Abandoned_House/textures/Muro.jpg"
-dest_files=["res://.godot/imported/Muro.jpg-082f3d14fdd6eae0510159a17ee5d3a4.s3tc.ctex"]
+source_file="res://Abandoned_House/Textures/Muro.jpg"
+dest_files=["res://.godot/imported/Muro.jpg-b72a0e3320991b61a051031a51c718f7.s3tc.ctex"]
 
 [params]
 

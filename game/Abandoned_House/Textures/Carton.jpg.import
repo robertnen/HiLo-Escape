@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4bgeubero8g0"
-path.s3tc="res://.godot/imported/Carton.jpg-6353157986ec2df78ad54010a113024a.s3tc.ctex"
+path.s3tc="res://.godot/imported/Carton.jpg-baf8e038fb347e4028b9004b7f66e3dd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Abandoned_House/textures/Carton.jpg"
-dest_files=["res://.godot/imported/Carton.jpg-6353157986ec2df78ad54010a113024a.s3tc.ctex"]
+source_file="res://Abandoned_House/Textures/Carton.jpg"
+dest_files=["res://.godot/imported/Carton.jpg-baf8e038fb347e4028b9004b7f66e3dd.s3tc.ctex"]
 
 [params]
 

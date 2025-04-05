@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bslu55k06s7tg"
+uid="uid://fsvitbnp7vav"
 path.s3tc="res://.godot/imported/easel_ImphenziaPalette01-256-Gradient.png-2e0f313e334a69df12f54b1b9afc9acc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "507b00d35d0f3012a9e79196c4d862cf"
 }
 
 [deps]

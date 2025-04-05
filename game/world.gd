@@ -6,7 +6,11 @@ extends Node3D
 @onready var pause_menu = $PauseMenu
 @onready var pause_panel = $PauseMenu/CanvasLayer
 
+@onready var start_button = $"Main Menu/Menu/MarginContainer/VBoxContainer/StartGameButton"
+@onready var menu_panel = $"Main Menu"
+
 var is_paused = false
+var is_menu = true
 
 const VOLUME_DB = -21.333 # pt streaming
 const EYE_DURATION = 14
@@ -45,9 +49,10 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	
 	# ascunde lucruri
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	pause_menu.visible = false
 	pause_panel.visible = false
+	
+	start_button.connect("pressed", Callable(self, "_start_game"));
 
 	# media player-ul cu ost-ul jocului
 	randomize()
@@ -79,6 +84,9 @@ func _process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("fullscreen_toggle"):
 		toggle_fullscreen()
+		
+	if is_menu:
+		return
 		
 	if time_elapsed < fade_duration && fade_duration != 0:
 		bec.light_energy = lerp(0., light_target, time_elapsed / fade_duration)
@@ -163,3 +171,9 @@ func toggle_pause(delta: float):
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 		bec.light_energy = light_target
+		
+func _start_game():
+	is_menu = false
+	menu_panel.visible = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	
