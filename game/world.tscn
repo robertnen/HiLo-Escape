@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bm2fl17i7tjk7"]
+[gd_scene load_steps=17 format=3 uid="uid://bm2fl17i7tjk7"]
 
 [ext_resource type="Script" uid="uid://doq83vcgqa32o" path="res://world.gd" id="1_dwbse"]
 [ext_resource type="PackedScene" uid="uid://c451bcyjbqphn" path="res://abandoned_house.tscn" id="1_f3sb7"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://d0q43hcnxts6q" path="res://camera_3d.gd" id="4_036b0"]
 [ext_resource type="PackedScene" uid="uid://lwi4xpb1atsr" path="res://nightmare_girl_sketchfab.tscn" id="4_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://dapq5l70135ra" path="res://eye/eye.gltf" id="7_pkg7o"]
+[ext_resource type="PackedScene" uid="uid://diedce1pwlje3" path="res://eye_modified.tscn" id="10_wse8f"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_aqk2v"]
 
@@ -87,3 +88,7 @@ transform = Transform3D(-7.33049, 3.46469, 5.85319, -0.0635565, 8.57014, -5.1525
 
 [node name="PauseMenu" parent="." instance=ExtResource("2_gbfbk")]
 position = Vector2(70, 145)
+
+[node name="eye3" parent="." instance=ExtResource("10_wse8f")]
+transform = Transform3D(0.0510861, 0.00603496, -0.0857542, -0.00592702, 0.0997632, 0.00348995, 0.0857617, 0.00329979, 0.0513228, -32.305, 1.295, -120.759)
+visible = false

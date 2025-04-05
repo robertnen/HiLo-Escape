@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var menu = $Menu
 @onready var settings = $Settings
-@onready var shadows_check = $Settings/Shadows
+@onready var shadows_check = $Settings/CheckButton
 @onready var settings_button = $Menu/MarginContainer/VBoxContainer/SettingsButton
 @onready var back_button = $Settings/Back_Button
 @onready var exit_button = $Menu/MarginContainer/VBoxContainer/ExitButton

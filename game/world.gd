@@ -53,6 +53,9 @@ var eye_elapsed_2 = 0
 var eye_flag_2 = false;
 @onready var eye_2 = $eye2
 @onready var eye_audio_2 = $eye2/eye_stream_2
+@onready var anim_bad_ending_1 = $eye3/AnimationPlayer
+
+@onready var eye_3 = $eye3
 
 func _ready() -> void:
 	asp.volume_db = VOLUME_DB
@@ -66,6 +69,8 @@ func _ready() -> void:
 	pause_exit_menu_btn.connect("pressed", Callable(self, "_exit_to_menu"))
 	pause_exit_btn.connect("pressed", Callable(self, "_exit_game"))
 	
+	asp.finished.connect(_on_song_finished)
+	
 	start_game()
 
 func start_game():
@@ -77,6 +82,8 @@ func start_game():
 	
 	game_elapsed_time = 0
 	time_elapsed = 0
+	eye_elapsed = 0
+	eye_elapsed_2 = 0
 	
 		# ascunde lucruri
 	pause_menu.visible = false
@@ -91,8 +98,6 @@ func start_game():
 	
 	asp.stream = load(chosen_path)
 	asp.play()
-	
-	asp.finished.connect(_on_song_finished)
 	
 	# luminca de la bef, efect fade-in
 	bec.light_energy = 0.
@@ -116,10 +121,6 @@ func _process(delta: float) -> void:
 		bec.light_energy = lerp(0., light_target, time_elapsed / fade_duration)
 	
 	time_elapsed += delta
-	#if time_elapsed > 20:
-		#time_elapsed = 0
-		#bec.light_energy = 0.
-		
 	game_elapsed_time += delta
 	
 	if game_elapsed_time > 1000:
@@ -134,7 +135,7 @@ func _process(delta: float) -> void:
 			
 		var yaw_deg = rad_to_deg(cam.rotation.y)
 
-		if abs(yaw_deg - -60) < 5:
+		if abs(yaw_deg - 60) < 5:
 			eye_audio.stop()
 			asp.volume_db += 10
 			eye_flag = false
@@ -144,7 +145,15 @@ func _process(delta: float) -> void:
 			
 		if eye_elapsed > EYE_DURATION:
 			eye_audio.stop()
-			# adauga ending
+			eye_3.visible = true
+			Input.warp_mouse(Vector2(1483.0, 153.0))
+			anim_bad_ending_1.get_animation("ATK").loop = true
+			anim_bad_ending_1.play("ATK")
+			
+			if eye_elapsed > EYE_DURATION + 6.3:
+				anim_bad_ending_1.stop()
+				eye_3.visible = false
+				_exit_to_menu()
 		
 		eye_elapsed += delta
 		
@@ -198,7 +207,7 @@ func toggle_pause(delta: float):
 		eye_audio_2.stream_paused = false
 		
 	get_tree().paused = is_paused
-	asp.play()
+	asp.stream_paused = !asp.stream_paused
 	pause_menu.visible = is_paused
 	pause_panel.visible = is_paused
 	if is_paused:
@@ -218,7 +227,6 @@ func _start_game():
 	start_game()
 	
 func _continue_game():
-		asp.stream_paused = !asp.stream_paused
 		toggle_pause(0)
 		
 func _exit_to_menu():
