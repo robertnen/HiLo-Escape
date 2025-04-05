@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bm2fl17i7tjk7"]
+[gd_scene load_steps=14 format=3 uid="uid://bm2fl17i7tjk7"]
 
 [ext_resource type="Script" uid="uid://doq83vcgqa32o" path="res://world.gd" id="1_dwbse"]
 [ext_resource type="PackedScene" uid="uid://c451bcyjbqphn" path="res://abandoned_house.tscn" id="1_f3sb7"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dsmb8k2x52iht" path="res://case_low_.tscn" id="3_aqk2v"]
 [ext_resource type="Script" uid="uid://d0q43hcnxts6q" path="res://camera_3d.gd" id="4_036b0"]
 [ext_resource type="PackedScene" uid="uid://lwi4xpb1atsr" path="res://nightmare_girl_sketchfab.tscn" id="4_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://dapq5l70135ra" path="res://eye/eye.gltf" id="7_pkg7o"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_aqk2v"]
 
@@ -39,7 +40,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.703, 0.762301, -121.659)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.412643, 4.74863e-09, 0.910893, -1.49012e-08, 1, 1.53722e-09, -0.910893, -1.42077e-08, 0.412643, 7.73438, 140.702, -24.8726)
 light_color = Color(0.0189979, 0.159674, 0.340315, 1)
-light_energy = 1.393
+light_energy = 0.1
 light_indirect_energy = 2.131
 light_volumetric_fog_energy = 5.687
 shadow_enabled = true
@@ -55,9 +56,9 @@ camera_attributes = SubResource("CameraAttributesPractical_dwbse")
 compositor = SubResource("Compositor_pkg7o")
 
 [node name="Spooky_Summer_Nightmare_Girl_Sketchfab" parent="WorldEnvironment" instance=ExtResource("4_aqk2v")]
-transform = Transform3D(0.094462, 0, -0.490996, 0, 0.5, 0, 0.490996, 0, 0.094462, -29.581, 0.231652, -120.645)
+transform = Transform3D(0.094462, 0, -0.490996, 0, 0.5, 0, 0.490996, 0, 0.094462, -28.8717, 0.231652, -123.063)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
+[node name="Bec" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.105344, 0.994436, 0, -0.994436, 0.105344, -31.8735, 3.31035, -120.9)
 light_energy = 2.293
 
@@ -65,3 +66,17 @@ light_energy = 2.293
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.3171, 0.795646, -121.876)
 stream = SubResource("AudioStream_dwbse")
 volume_db = -21.333
+
+[node name="eye" parent="." instance=ExtResource("7_pkg7o")]
+transform = Transform3D(0.0334298, 0.0351537, 0.0874452, -0.0705982, 0.0708076, -0.00147603, -0.0624367, -0.0612413, 0.0484887, -35.7509, 1.50123, -122.437)
+visible = false
+
+[node name="eye_stream" type="AudioStreamPlayer3D" parent="eye"]
+transform = Transform3D(-7.33049, 3.46469, 5.85319, -0.0635565, 8.57014, -5.15254, -6.80146, -3.81426, -6.26031, -35.751, 1.501, -122.437)
+
+[node name="eye2" parent="." instance=ExtResource("7_pkg7o")]
+transform = Transform3D(-0.0733049, -0.000635572, -0.0680146, 0.0346469, 0.0857014, -0.0381426, 0.0585319, -0.0515254, -0.0626031, -29.918, 2.57135, -118.205)
+visible = false
+
+[node name="eye_stream_2" type="AudioStreamPlayer3D" parent="eye2"]
+transform = Transform3D(-7.33049, 3.46469, 5.85319, -0.0635565, 8.57014, -5.15254, -6.80146, -3.81426, -6.26031, -0.00283813, -0.00189209, 0.00256348)
