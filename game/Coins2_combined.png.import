@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bw1nl0fh0afa2"
+path.s3tc="res://.godot/imported/Coins2_combined.png-5b68d8e8b356331b9ec606a5cf8d1b4a.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "f877ca43508239195fc08698802a059d"
+}
+
+[deps]
+
+source_file="res://Coins2_combined.png"
+dest_files=["res://.godot/imported/Coins2_combined.png-5b68d8e8b356331b9ec606a5cf8d1b4a.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://Coins2_combined.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

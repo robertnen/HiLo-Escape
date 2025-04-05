@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://b036yh6i444k3"]
+
+[ext_resource type="PackedScene" uid="uid://dn5x3ow8hokj2" path="res://Coins2.gltf" id="1_cdu4o"]
+
+[node name="Coins2" instance=ExtResource("1_cdu4o")]
+
+[node name="Cylinder" parent="." index="0"]
+visible = false
+
+[node name="Ecuador" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0291954, -0.254323, -0.128895)
+
+[node name="nickle" parent="." index="2"]
+visible = false
+
+[node name="10_cent_franc" parent="." index="3"]
+visible = false
+
+[node name="5_cent_franc" parent="." index="4"]
+visible = false
+
+[node name="25_cent_franc" parent="." index="5"]
+visible = false
+
+[node name="2_Paise_india" parent="." index="6"]
+visible = false
+
+[node name="1_rupee_india" parent="." index="7"]
+visible = false
+
+[node name="1_rupee_india_001" parent="." index="8"]
+visible = false
+
+[node name="5_soveit_russia" parent="." index="9"]
+visible = false
+
+[node name="50_soveit_russia_001" parent="." index="10"]
+visible = false
+
+[node name="5_russia_001" parent="." index="11"]
+visible = false
+
+[node name="5_CENT_FRANC" parent="." index="12"]
+visible = false
+
+[node name="1_CENT_FRANC_001" parent="." index="13"]
+visible = false
+
+[node name="50_CENT_FRANC_001" parent="." index="14"]
+visible = false
+
+[node name="Cylinder_001" parent="." index="15"]
+visible = false

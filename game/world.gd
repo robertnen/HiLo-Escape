@@ -13,7 +13,29 @@ extends Node3D
 @onready var pause_exit_menu_btn = $PauseMenu/CanvasLayer/Panel/Menu_btn
 @onready var pause_exit_btn = $PauseMenu/CanvasLayer/Panel/Quit_btn
 
+@onready var hud = $HUD/CanvasLayer
+
 @onready var ending = $ending
+
+@onready var caro_scene_2 = preload('res://2-caro.tscn')
+@onready var trefla_scene_2 = preload('res://2-trefla.tscn')
+@onready var inima_rosie_scene_2 = preload('res://2-inima-rosie.tscn')
+@onready var inima_neagra_scene_2 = preload('res://2-inima-neagra.tscn')
+
+
+const SCALE = 0.3
+
+var round_1_player: Array[PackedScene] = [
+	caro_scene_7, trefla_scene_3, caro_scene_2, trefla_scene_2, caro_scene_3
+]
+
+var round_1_anta: Array[PackedScene] = [
+	caro_scene_7, caro_scene_3, caro_scene_2, caro_scene_2, caro_scene_3
+]
+
+var money_player = 5
+var money_antago = 5
+
 var is_ending: bool = false
 
 const TIME_BETWEEN_ROUNDS = 5 # seconds
@@ -63,6 +85,7 @@ var eye_flag_2 = false;
 @onready var eye_3 = $eye3
 
 func _ready() -> void:
+	hud.visible = false
 	asp.volume_db = VOLUME_DB
 	eye_audio.volume_db = 5
 	eye_audio_2.volume_db = 5
@@ -111,7 +134,37 @@ func start_game():
 	eye_time_to_start = randi() % 1 + 3
 	eye_time_to_start_2 = randi() % 1 + 5
 
-func display_cards():
+var caro_arr = []
+var pos_1 = Vector3(-32.272, 1.326, -121.187)
+var pos_2 = Vector3(-32.209, 1.321, -120.894)
+var pos_3 = Vector3(-32.146, 1.317, -120.601)
+var pos_4 = Vector3(-32.082, 1.312, -120.308)
+var pos_5 = Vector3(-32.019, 1.308, -120.014)
+
+func add_card(card: PackedScene, pos: Vector3, ang: Vector3 = Vector3(-77.3, 98.3, 3.9)):
+	var inst = card.instantiate()
+	inst.position = pos
+	inst.scale = Vector3(SCALE, SCALE, SCALE)
+	inst.rotation_degrees = ang
+	
+	caro_arr.append(inst)
+	add_child(inst)
+
+func remove_card():
+	for inst in caro_arr:
+		if is_instance_valid(inst):
+			inst.queue_free()
+			
+	caro_arr.clear()
+
+func display_cards(round_player: Array[PackedScene]):
+	add_card(round_player[0], pos_1)
+	add_card(round_player[1], pos_2)
+	add_card(round_player[2], pos_3)
+	add_card(round_player[3], pos_4)
+	add_card(round_player[4], pos_5)
+	
+func display_cards_anta(round_anta: Array[PackedScene]):
 	pass
 
 func _process(delta: float) -> void:
@@ -124,6 +177,8 @@ func _process(delta: float) -> void:
 		
 	if is_menu or is_paused:
 		return
+	
+	hud.visible = true
 		
 	if time_elapsed < fade_duration && fade_duration != 0:
 		@warning_ignore("integer_division")
@@ -175,9 +230,6 @@ func _process(delta: float) -> void:
 		eye_elapsed += delta
 		
 	if game_elapsed_time >= eye_time_to_start_2:
-		eye_time_to_start = 100000
-		eye_audio.stop()
-
 		if eye_flag_2 == false:
 			eye_2.show()
 			eye_flag_2 = true
@@ -215,6 +267,10 @@ func _process(delta: float) -> void:
 				_exit_to_menu()
 		
 		eye_elapsed_2 += delta
+
+	if game_elapsed_time > 5: # runda 1
+		display_cards(round_1_player)
+		pass
 
 func toggle_fullscreen():
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_WINDOWED:
@@ -275,8 +331,10 @@ func _continue_game():
 		toggle_pause(0)
 		
 func _exit_to_menu():
+		hud.visible = false
 		is_paused = false
 		is_menu = true
+		eye_3.visible = false
 		pause_panel.visible = false
 		menu_panel.visible = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

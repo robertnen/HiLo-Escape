@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bm2fl17i7tjk7"]
+[gd_scene load_steps=26 format=3 uid="uid://bm2fl17i7tjk7"]
 
 [ext_resource type="Script" uid="uid://doq83vcgqa32o" path="res://world.gd" id="1_dwbse"]
 [ext_resource type="PackedScene" uid="uid://c451bcyjbqphn" path="res://abandoned_house.tscn" id="1_f3sb7"]
@@ -7,10 +7,18 @@
 [ext_resource type="PackedScene" uid="uid://cgwbi7tq4t2ay" path="res://RandomObjects/phone/phone_low.glb" id="2_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://dsmb8k2x52iht" path="res://case_low_.tscn" id="3_aqk2v"]
 [ext_resource type="Script" uid="uid://d0q43hcnxts6q" path="res://camera_3d.gd" id="4_036b0"]
+[ext_resource type="Texture2D" uid="uid://mj1e6200vlar" path="res://op.png" id="4_70uel"]
 [ext_resource type="PackedScene" uid="uid://lwi4xpb1atsr" path="res://nightmare_girl_sketchfab.tscn" id="4_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://dapq5l70135ra" path="res://eye/eye.gltf" id="7_pkg7o"]
 [ext_resource type="PackedScene" uid="uid://diedce1pwlje3" path="res://eye_modified.tscn" id="10_wse8f"]
 [ext_resource type="PackedScene" path="res://2-caro.tscn" id="11_ic0uy"]
+[ext_resource type="Texture2D" uid="uid://88q2gjh2v2ag" path="res://Untitled-spate_256_384.png" id="12_k3n1d"]
+[ext_resource type="Texture2D" uid="uid://ce2nfox74ofql" path="res://coin.png" id="13_2o6r5"]
+[ext_resource type="PackedScene" path="res://7-inima-neagra.tscn" id="15_cbp6q"]
+[ext_resource type="PackedScene" uid="uid://cqwx42lsxy6q3" path="res://decks/3-inima-rosie.tscn" id="16_26xuy"]
+[ext_resource type="PackedScene" path="res://2-inima-rosie.tscn" id="17_bc84e"]
+[ext_resource type="PackedScene" uid="uid://crjoa6k4pxx08" path="res://decks/2-caro.tscn" id="18_wukud"]
+[ext_resource type="PackedScene" uid="uid://cruprins835t7" path="res://decks/3-trefla.tscn" id="19_il2jm"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_aqk2v"]
 
@@ -32,6 +40,54 @@ ambient_light_energy = 0.27
 
 [node name="world" type="Node3D"]
 script = ExtResource("1_dwbse")
+
+[node name="HUD" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="HUD"]
+
+[node name="spate_1" type="Sprite2D" parent="HUD/CanvasLayer"]
+position = Vector2(645, 59)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("12_k3n1d")
+
+[node name="spate_2" type="Sprite2D" parent="HUD/CanvasLayer"]
+position = Vector2(734, 60)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("12_k3n1d")
+
+[node name="spate_3" type="Sprite2D" parent="HUD/CanvasLayer"]
+position = Vector2(823, 61)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("12_k3n1d")
+
+[node name="spate_4" type="Sprite2D" parent="HUD/CanvasLayer"]
+position = Vector2(912, 62)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("12_k3n1d")
+
+[node name="spate_5" type="Sprite2D" parent="HUD/CanvasLayer"]
+position = Vector2(1001, 63)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("12_k3n1d")
+
+[node name="Coin" type="Sprite2D" parent="HUD/CanvasLayer"]
+position = Vector2(1430, 65)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("13_2o6r5")
+
+[node name="Label" type="Label" parent="HUD/CanvasLayer"]
+offset_left = 1319.0
+offset_top = 34.0
+offset_right = 1384.0
+offset_bottom = 103.0
+theme_override_font_sizes/font_size = 50
+text = "5 "
+uppercase = true
+
+[node name="Op" type="Sprite2D" parent="HUD/CanvasLayer"]
+position = Vector2(565, 60)
+scale = Vector2(0.363916, 0.363916)
+texture = ExtResource("4_70uel")
 
 [node name="Main Menu" parent="." instance=ExtResource("2_ioo17")]
 
@@ -88,6 +144,7 @@ visible = false
 transform = Transform3D(-7.33049, 3.46469, 5.85319, -0.0635565, 8.57014, -5.15254, -6.80146, -3.81426, -6.26031, -0.00283813, -0.00189209, 0.00256348)
 
 [node name="PauseMenu" parent="." instance=ExtResource("2_gbfbk")]
+visible = false
 position = Vector2(70, 145)
 
 [node name="eye3" parent="." instance=ExtResource("10_wse8f")]
@@ -98,4 +155,44 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.305, 1.295, -120.759)
 
 [node name="Fata_de_masa" parent="." instance=ExtResource("11_ic0uy")]
-transform = Transform3D(4.37114e-08, 3.82137e-15, -1, 8.74228e-08, -1, 0, -1, -8.74228e-08, -4.37114e-08, -31.9066, 0.696925, -120.741)
+transform = Transform3D(3.49691e-08, 5.28019e-15, -0.8, 1.20797e-07, -0.8, 0, -0.8, -1.20797e-07, -3.49691e-08, -31.9066, 0.696925, -120.741)
+
+[node name="carte_1" parent="." instance=ExtResource("11_ic0uy")]
+transform = Transform3D(-0.0632234, -0.285894, 0.0653261, 0.00452333, 0.0658684, 0.292645, -0.293227, 0.0626583, -0.00957077, -32.2718, 1.32618, -121.187)
+visible = false
+
+[node name="carte_2" parent="." instance=ExtResource("11_ic0uy")]
+transform = Transform3D(-0.0632234, -0.285894, 0.0653261, 0.00452333, 0.0658684, 0.292645, -0.293227, 0.0626583, -0.00957077, -32.2088, 1.32137, -120.894)
+visible = false
+
+[node name="carte_3" parent="." instance=ExtResource("11_ic0uy")]
+transform = Transform3D(-0.0632234, -0.285894, 0.0653261, 0.00452333, 0.0658684, 0.292645, -0.293227, 0.0626583, -0.00957077, -32.1455, 1.31685, -120.601)
+visible = false
+
+[node name="carte_4" parent="." instance=ExtResource("11_ic0uy")]
+transform = Transform3D(-0.0632234, -0.285894, 0.0653261, 0.00452333, 0.0658684, 0.292645, -0.293227, 0.0626583, -0.00957077, -32.0823, 1.31232, -120.308)
+visible = false
+
+[node name="carte_5" parent="." instance=ExtResource("11_ic0uy")]
+transform = Transform3D(-0.0632234, -0.285894, 0.0653261, 0.00452333, 0.0658684, 0.292645, -0.293227, 0.0626583, -0.00957077, -32.0191, 1.3078, -120.014)
+visible = false
+
+[node name="7N" parent="." instance=ExtResource("15_cbp6q")]
+transform = Transform3D(-0.0632234, -0.285894, 0.0653261, 0.00452332, 0.0658683, 0.292645, -0.293227, 0.0626583, -0.00957077, -32.2718, 1.32618, -121.187)
+visible = false
+
+[node name="3R" parent="." instance=ExtResource("16_26xuy")]
+transform = Transform3D(-0.0629035, -0.285979, 0.065263, 0.00448587, 0.0658011, 0.29266, -0.293297, 0.0623404, -0.00952085, -32.2088, 1.32137, -120.894)
+visible = false
+
+[node name="2R" parent="." instance=ExtResource("17_bc84e")]
+transform = Transform3D(-0.0632234, -0.285894, 0.0653261, 0.00452332, 0.0658683, 0.292645, -0.293227, 0.0626583, -0.00957077, -32.1455, 1.31685, -120.601)
+visible = false
+
+[node name="2C" parent="." instance=ExtResource("18_wukud")]
+transform = Transform3D(-0.0632234, -0.285894, 0.0653261, 0.00452332, 0.0658683, 0.292645, -0.293227, 0.0626583, -0.00957077, -32.0823, 1.31232, -120.308)
+visible = false
+
+[node name="3T" parent="." instance=ExtResource("19_il2jm")]
+transform = Transform3D(-0.0629035, -0.285979, 0.065263, 0.00448587, 0.0658011, 0.29266, -0.293297, 0.0623404, -0.00952085, -32.0191, 1.3078, -120.014)
+visible = false
