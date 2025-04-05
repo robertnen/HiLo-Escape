@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://doh1a01mb8gwp"
+path.s3tc="res://.godot/imported/padlock_low_padlock_low_metallic-padlock_low_roughness.png-f7e3f6593b31ac9cec4d5c5755eca73e.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "0e790d70f2ba475550322cd255d19792"
+}
+
+[deps]
+
+source_file="res://RandomObjects/padlockAndKeys/padlock_low_padlock_low_metallic-padlock_low_roughness.png"
+dest_files=["res://.godot/imported/padlock_low_padlock_low_metallic-padlock_low_roughness.png-f7e3f6593b31ac9cec4d5c5755eca73e.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

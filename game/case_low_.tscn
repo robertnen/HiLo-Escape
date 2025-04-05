@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsmb8k2x52iht"]
+
+[ext_resource type="PackedScene" uid="uid://dy53ja56nntwd" path="res://RandomObjects/case/case_low.glb" id="1_lf2vi"]
+
+[node name="case_low2" instance=ExtResource("1_lf2vi")]

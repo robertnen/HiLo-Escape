@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://ctat4assn2g5f"
+path.s3tc="res://.godot/imported/portableheater_6.png-0af257905fd848cc9818c437a33b5229.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "21118c70b09e8fbb35d08b1b82e6214c"
+}
+
+[deps]
+
+source_file="res://RandomObjects/portableHeater/portableheater_6.png"
+dest_files=["res://.godot/imported/portableheater_6.png-0af257905fd848cc9818c437a33b5229.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://RandomObjects/portableHeater/portableheater_6.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

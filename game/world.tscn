@@ -1,11 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://bm2fl17i7tjk7"]
+[gd_scene load_steps=5 format=3 uid="uid://bm2fl17i7tjk7"]
 
 [ext_resource type="PackedScene" uid="uid://c451bcyjbqphn" path="res://abandoned_house.tscn" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://cgwbi7tq4t2ay" path="res://RandomObjects/phone/phone_low.glb" id="2_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://dsmb8k2x52iht" path="res://case_low_.tscn" id="3_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://lwi4xpb1atsr" path="res://nightmare_girl_sketchfab.tscn" id="4_aqk2v"]
 
 [node name="world" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.209898, 0.251738, -0.94476, -0.0484294, 0.967776, 0.247111, 0.976523, -0.00611401, 0.215326, -32.4213, 1.39914, -120.473)
-fov = 91.3045
+transform = Transform3D(0.221548, 0.240861, -0.944935, 0, 0.969016, 0.246999, 0.975149, -0.0547222, 0.214684, -32.8479, 1.39914, -120.473)
+fov = 90.364
 
 [node name="Abandoned_House2" parent="." instance=ExtResource("1_f3sb7")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.412643, 0, 0.910893, 0, 1, 0, -0.910893, 0, 0.412643, -12.4596, 140.702, -56.8081)
+light_color = Color(0.0189979, 0.159674, 0.340315, 1)
+light_energy = 0.485
+light_indirect_energy = 2.131
+light_volumetric_fog_energy = 5.687
+shadow_enabled = true
+
+[node name="phone_low2" parent="." instance=ExtResource("2_tlwt5")]
+transform = Transform3D(0.203486, 0, -0.220439, 0, 0.3, 0, 0.220439, 0, 0.203486, -32.4021, 0.71019, -121.78)
+
+[node name="case_low" parent="." instance=ExtResource("3_aqk2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.703, 0.762301, -121.659)
+
+[node name="Spooky_Summer_Nightmare_Girl_Sketchfab" parent="." instance=ExtResource("4_aqk2v")]
+transform = Transform3D(0.094462, 0, -0.490996, 0, 0.5, 0, 0.490996, 0, 0.094462, -29.581, 0.231652, -120.645)
