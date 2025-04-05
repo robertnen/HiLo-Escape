@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://c451bcyjbqphn"]
+
+[ext_resource type="PackedScene" uid="uid://cluiibplvsuee" path="res://Abandoned_House/Models/Abandoned_House.glb" id="1_o2ne0"]
+
+[node name="Abandoned_House" instance=ExtResource("1_o2ne0")]
+
+[node name="Telaraña_017" parent="Telarañas" index="17"]
+transform = Transform3D(-0.377257, -0.634746, 0.169842, -9.8767e-05, 0.1959, 0.731912, -0.657076, 0.364407, -0.0976241, -0.599228, -8.47483, -3.08743)
+
+[node name="Telaraña_018" parent="Telarañas" index="18"]
+transform = Transform3D(0.300895, 0.532304, 0.294492, -0.255247, -0.187756, 0.600173, 0.552197, -0.376843, 0.116953, -5.61473, -4.37782, 5.32217)
+
+[node name="Silla" parent="Sillas" index="0"]
+transform = Transform3D(4.03722, 0, 0, 0, 4.03722, 0, 0, 0, 4.03722, 0.434059, -31.6916, 22.605)
+
+[node name="Silla_001" parent="Sillas" index="1"]
+transform = Transform3D(3.48436, 0, 2.0392, 0, 4.03722, 0, -2.0392, 0, 3.48436, 0.601669, -31.6916, 17.6615)
+
+[node name="Silla_003" parent="Sillas" index="3"]
+transform = Transform3D(0, 0, -4.03722, 0, 4.03722, 0, 4.03722, 0, 0, -4.9752, -31.6792, 27.7217)
+
+[node name="Silla_004" parent="Sillas" index="4"]
+transform = Transform3D(-4.03722, 0, 0, 0, 4.03722, 0, 0, 0, 4.03722, -10.218, -31.6916, 19.5366)
+
+[node name="Silla_005" parent="Sillas" index="5"]
+transform = Transform3D(-4.03722, 0, 0, 0, 4.03722, 0, 0, 0, 4.03722, -10.4193, -31.6916, 22.5892)
+
+[node name="Foco_001" parent="Focos" index="1"]
+transform = Transform3D(0.0708992, 0, 0, 0, -0.0708992, 0, 0, 0, 0.0708992, -17.369, -11.3497, 13.8042)

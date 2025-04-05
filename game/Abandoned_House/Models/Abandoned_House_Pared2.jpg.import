@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cci7lm2ficlyo"
+path.s3tc="res://.godot/imported/Abandoned_House_Pared2.jpg-e48c90756601227c4d568cd520b9c47f.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "3ecca8a5d90b83278718a438bfdd8b20"
+}
+
+[deps]
+
+source_file="res://Abandoned_House/Models/Abandoned_House_Pared2.jpg"
+dest_files=["res://.godot/imported/Abandoned_House_Pared2.jpg-e48c90756601227c4d568cd520b9c47f.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

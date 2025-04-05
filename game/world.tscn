@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://bm2fl17i7tjk7"]
+[gd_scene load_steps=2 format=3 uid="uid://bm2fl17i7tjk7"]
+
+[ext_resource type="PackedScene" uid="uid://c451bcyjbqphn" path="res://abandoned_house.tscn" id="1_f3sb7"]
 
 [node name="world" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.209898, 0.251738, -0.94476, -0.0484294, 0.967776, 0.247111, 0.976523, -0.00611401, 0.215326, -32.4213, 1.39914, -120.473)
+fov = 91.3045
+
+[node name="Abandoned_House2" parent="." instance=ExtResource("1_f3sb7")]

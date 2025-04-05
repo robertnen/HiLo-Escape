@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="New Game Project"
+run/main_scene="uid://bm2fl17i7tjk7"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [dotnet]
 
 project/assembly_name="New Game Project"
+
+[filesystem]
+
+import/blender/enabled=false
