@@ -7,21 +7,19 @@ func _ready():
 	$Volume_Slider.connect("value_changed", Callable(self, "_on_Volume_Slider_value_changed"))
 	$SFX_Slider.connect("value_changed", Callable(self, "_on_SFX_Slider_value_changed"))
 
-	# load resolutions in option button
 	AddResolutions()
 
 func _on_Volume_Slider_value_changed(value):
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(value))
 	world.volume = -80 + -1. * value / 50. * (-80)
 	world.asp.volume_db = world.volume
 
 func _on_SFX_Slider_value_changed(value):
-	#AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(value))
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(value))
 	world.volume_sfx = -80 + -1. * value / 50. * (-80)
 	world.eye_audio.volume_db = world.volume_sfx
 	world.eye_audio_2.volume_db = world.volume_sfx
 	world.ending.volume_db = world.volume_sfx
+	world.rewind_aud.volume_db = world.volume_sfx * 2
+	world.no_rewind_aud.volume_db = world.volume_sfx * 2
 
 func linear_to_db(value: float) -> float:
 	if value <= 0.0:
