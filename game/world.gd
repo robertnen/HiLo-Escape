@@ -136,6 +136,7 @@ func _flash(delta: float):
 				flash.modulate.a = 0
 
 func _ready() -> void:
+	DisplayServer.window_set_title("HiLo Escape")
 	hud.visible = false
 	hud_1.visible = false
 	hud_2.visible = false

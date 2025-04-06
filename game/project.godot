@@ -10,10 +10,12 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
+config/name="HiLo Escape"
+config/description="A game made at HackItAll in GoDot"
+config/version="1.0.3."
 run/main_scene="uid://bm2fl17i7tjk7"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://b0k7bqc5f4f51"
 
 [display]
 
