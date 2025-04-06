@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://lwi4xpb1atsr"]
+[gd_scene load_steps=3 format=3 uid="uid://lwi4xpb1atsr"]
 
 [ext_resource type="PackedScene" uid="uid://msyhis67f64e" path="res://Spooky_Summer_Nightmare_Girl_Sketchfab.gltf" id="1_7fqpm"]
+[ext_resource type="Script" uid="uid://c2817m6u74p84" path="res://nightmare_girl_sketchfab.gd" id="2_txxsr"]
 
 [node name="Spooky_Summer_Nightmare_Girl_Sketchfab" instance=ExtResource("1_7fqpm")]
+script = ExtResource("2_txxsr")
 
 [node name="RIG_Nightmare_Girl" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0269444, -0.128229, 0.00540924)

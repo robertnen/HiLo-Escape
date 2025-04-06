@@ -17,21 +17,9 @@ extends Node3D
 
 @onready var ending = $ending
 
-@onready var caro_scene_2 = preload('res://2-caro.tscn')
-@onready var trefla_scene_2 = preload('res://2-trefla.tscn')
-@onready var inima_rosie_scene_2 = preload('res://2-inima-rosie.tscn')
-@onready var inima_neagra_scene_2 = preload('res://2-inima-neagra.tscn')
-
+@onready var toanta = $WorldEnvironment/Spooky_Summer_Nightmare_Girl_Sketchfab
 
 const SCALE = 0.3
-
-var round_1_player: Array[PackedScene] = [
-	caro_scene_7, trefla_scene_3, caro_scene_2, trefla_scene_2, caro_scene_3
-]
-
-var round_1_anta: Array[PackedScene] = [
-	caro_scene_7, caro_scene_3, caro_scene_2, caro_scene_2, caro_scene_3
-]
 
 var money_player = 5
 var money_antago = 5
@@ -104,6 +92,7 @@ func _ready() -> void:
 
 func start_game():
 	Input.warp_mouse(Vector2(1583.0, 84.0))
+	eye_3.visible = false
 	
 	cam.rotate_x(-14.3)
 	cam.rotate_y(-77.2)
@@ -133,6 +122,15 @@ func start_game():
 	
 	eye_time_to_start = randi() % 1 + 3
 	eye_time_to_start_2 = randi() % 1 + 5
+	toanta.position = Vector3(-28.392, 0.103, -124.283)
+	var toanta_iar = get_node("WorldEnvironment/Spooky_Summer_Nightmare_Girl_Sketchfab")
+	var toanta_anim = get_node("WorldEnvironment/Spooky_Summer_Nightmare_Girl_Sketchfab/AnimationPlayer")
+	toanta_iar.time_elapsed = 0.
+	toanta_iar.direction = -Vector3.LEFT
+	
+	toanta_anim.get_animation("Girl_Anim_Walk").loop = true
+	toanta_anim.play("Girl_Anim_Walk")
+
 
 var caro_arr = []
 var pos_1 = Vector3(-32.272, 1.326, -121.187)
@@ -269,7 +267,6 @@ func _process(delta: float) -> void:
 		eye_elapsed_2 += delta
 
 	if game_elapsed_time > 5: # runda 1
-		display_cards(round_1_player)
 		pass
 
 func toggle_fullscreen():
@@ -307,6 +304,13 @@ func toggle_pause(delta: float):
 		anim_bad_ending_1.get_animation("ATK").loop = true
 		anim_bad_ending_1.play("ATK")
 		
+	var toanta_iar = get_node("WorldEnvironment/Spooky_Summer_Nightmare_Girl_Sketchfab")
+	var toanta_anim = get_node("WorldEnvironment/Spooky_Summer_Nightmare_Girl_Sketchfab/AnimationPlayer")	
+	
+	if !is_paused:
+		toanta_anim.get_animation("Girl_Anim_Walk").loop = true
+		toanta_anim.play("Girl_Anim_Walk")
+	
 	get_tree().paused = is_paused
 	asp.stream_paused = !asp.stream_paused
 	pause_menu.visible = is_paused
@@ -321,6 +325,7 @@ func toggle_pause(delta: float):
 		bec.light_energy = light_target
 		
 func _start_game():
+	eye_3.visible = false
 	is_menu = false
 	menu_panel.visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -337,6 +342,8 @@ func _exit_to_menu():
 		eye_3.visible = false
 		pause_panel.visible = false
 		menu_panel.visible = true
+		eye.visible = false
+		eye_2.visible = false
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 func _exit_game():
