@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bm2fl17i7tjk7"]
+[gd_scene load_steps=41 format=3 uid="uid://bm2fl17i7tjk7"]
 
 [ext_resource type="Script" uid="uid://doq83vcgqa32o" path="res://world.gd" id="1_dwbse"]
 [ext_resource type="PackedScene" uid="uid://c451bcyjbqphn" path="res://abandoned_house.tscn" id="1_f3sb7"]
@@ -9,11 +9,16 @@
 [ext_resource type="Script" uid="uid://d0q43hcnxts6q" path="res://camera_3d.gd" id="4_036b0"]
 [ext_resource type="Texture2D" uid="uid://mj1e6200vlar" path="res://op.png" id="4_70uel"]
 [ext_resource type="PackedScene" uid="uid://lwi4xpb1atsr" path="res://nightmare_girl_sketchfab.tscn" id="4_aqk2v"]
+[ext_resource type="Texture2D" uid="uid://b8hjmm7swi4vn" path="res://decks/8-caro_448_288.png" id="5_gggvi"]
 [ext_resource type="Texture2D" uid="uid://ejb6p1ltnghv" path="res://decks/7-trefla_384_0.png" id="5_wjb0r"]
 [ext_resource type="Texture2D" uid="uid://dkm8il5ynptn" path="res://decks/3-caro_128_288.png" id="6_mc2jv"]
+[ext_resource type="Texture2D" uid="uid://bxt3wcmrqps8d" path="res://decks/2-caro_64_288.png" id="6_w44yn"]
+[ext_resource type="Texture2D" uid="uid://gui3fj7bav0" path="res://decks/2-trefla_64_0.png" id="7_6ah6f"]
 [ext_resource type="Texture2D" uid="uid://qmkkwmckfwtq" path="res://decks/3-inima-neagra_128_192.png" id="7_bo7i5"]
 [ext_resource type="PackedScene" uid="uid://dapq5l70135ra" path="res://eye/eye.gltf" id="7_pkg7o"]
 [ext_resource type="Texture2D" uid="uid://bjx3dkjuux1ax" path="res://decks/4-inima-rosie_192_96.png" id="8_4h6ng"]
+[ext_resource type="Texture2D" uid="uid://b52dn1jq4xq2r" path="res://decks/7-caro_384_288.png" id="8_g1i3r"]
+[ext_resource type="Texture2D" uid="uid://5tje1yjuli4g" path="res://decks/A-caro_0_288.png" id="9_my276"]
 [ext_resource type="Texture2D" uid="uid://dnclpytj1nggd" path="res://decks/5-inima-rosie_256_96.png" id="9_o3ebs"]
 [ext_resource type="PackedScene" uid="uid://diedce1pwlje3" path="res://eye_modified.tscn" id="10_wse8f"]
 [ext_resource type="PackedScene" path="res://2-caro.tscn" id="11_ic0uy"]
@@ -24,6 +29,10 @@
 [ext_resource type="PackedScene" path="res://2-inima-rosie.tscn" id="17_bc84e"]
 [ext_resource type="PackedScene" uid="uid://crjoa6k4pxx08" path="res://decks/2-caro.tscn" id="18_wukud"]
 [ext_resource type="PackedScene" uid="uid://cruprins835t7" path="res://decks/3-trefla.tscn" id="19_il2jm"]
+[ext_resource type="PackedScene" uid="uid://dhouak516tob5" path="res://decks/9-trefla.tscn" id="25_o3ebs"]
+[ext_resource type="PackedScene" uid="uid://4k13j3cjgxbd" path="res://decks/9-caro.tscn" id="26_k83mh"]
+[ext_resource type="PackedScene" uid="uid://csvr2gftdnhak" path="res://decks/q-inima-rosie.tscn" id="27_qktwf"]
+[ext_resource type="PackedScene" path="res://a-trefla.tscn" id="28_bh8nc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wjb0r"]
 bg_color = Color(0, 0, 0, 0)
@@ -55,27 +64,27 @@ script = ExtResource("1_dwbse")
 
 [node name="spate_1" type="Sprite2D" parent="HUD/CanvasLayer"]
 position = Vector2(645, 59)
-scale = Vector2(0.8, 0.8)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("12_k3n1d")
 
 [node name="spate_2" type="Sprite2D" parent="HUD/CanvasLayer"]
 position = Vector2(734, 60)
-scale = Vector2(0.8, 0.8)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("12_k3n1d")
 
 [node name="spate_3" type="Sprite2D" parent="HUD/CanvasLayer"]
 position = Vector2(823, 61)
-scale = Vector2(0.8, 0.8)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("12_k3n1d")
 
 [node name="spate_4" type="Sprite2D" parent="HUD/CanvasLayer"]
 position = Vector2(912, 62)
-scale = Vector2(0.8, 0.8)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("12_k3n1d")
 
 [node name="spate_5" type="Sprite2D" parent="HUD/CanvasLayer"]
 position = Vector2(1001, 63)
-scale = Vector2(0.8, 0.8)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("12_k3n1d")
 
 [node name="Coin" type="Sprite2D" parent="HUD/CanvasLayer"]
@@ -96,6 +105,38 @@ uppercase = true
 position = Vector2(565, 60)
 scale = Vector2(0.363916, 0.363916)
 texture = ExtResource("4_70uel")
+
+[node name="round_2" type="CanvasLayer" parent="HUD"]
+
+[node name="Op" type="Sprite2D" parent="HUD/round_2"]
+position = Vector2(565, 60)
+scale = Vector2(0.363916, 0.363916)
+texture = ExtResource("4_70uel")
+
+[node name="8-caro448288" type="Sprite2D" parent="HUD/round_2"]
+position = Vector2(645, 59)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("5_gggvi")
+
+[node name="2-caro64288" type="Sprite2D" parent="HUD/round_2"]
+position = Vector2(734, 60)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("6_w44yn")
+
+[node name="2-trefla640" type="Sprite2D" parent="HUD/round_2"]
+position = Vector2(823, 61)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_6ah6f")
+
+[node name="7-caro384288" type="Sprite2D" parent="HUD/round_2"]
+position = Vector2(912, 62)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("8_g1i3r")
+
+[node name="A-caro0288" type="Sprite2D" parent="HUD/round_2"]
+position = Vector2(1001, 63)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("9_my276")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="HUD"]
 
@@ -154,6 +195,7 @@ text = "Press K to rewind time"
 horizontal_alignment = 2
 
 [node name="round_1" type="CanvasLayer" parent="HUD"]
+visible = false
 
 [node name="Op" type="Sprite2D" parent="HUD/round_1"]
 position = Vector2(565, 60)
@@ -161,28 +203,28 @@ scale = Vector2(0.363916, 0.363916)
 texture = ExtResource("4_70uel")
 
 [node name="7-trefla3840" type="Sprite2D" parent="HUD/round_1"]
-position = Vector2(734, 60)
-scale = Vector2(0.8, 0.8)
+position = Vector2(734, 59)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("5_wjb0r")
 
 [node name="3-caro128288" type="Sprite2D" parent="HUD/round_1"]
 position = Vector2(645, 59)
-scale = Vector2(0.8, 0.8)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("6_mc2jv")
 
 [node name="3-inima-neagra128192" type="Sprite2D" parent="HUD/round_1"]
-position = Vector2(823, 61)
-scale = Vector2(0.8, 0.8)
+position = Vector2(823, 59)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("7_bo7i5")
 
 [node name="4-inima-rosie19296" type="Sprite2D" parent="HUD/round_1"]
-position = Vector2(912, 62)
-scale = Vector2(0.8, 0.8)
+position = Vector2(912, 59)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("8_4h6ng")
 
 [node name="5-inima-rosie25696" type="Sprite2D" parent="HUD/round_1"]
-position = Vector2(1001, 63)
-scale = Vector2(0.8, 0.8)
+position = Vector2(1001, 59)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("9_o3ebs")
 
 [node name="Panel" type="Panel" parent="HUD"]
@@ -299,5 +341,25 @@ transform = Transform3D(-0.0632234, -0.285894, 0.0653261, 0.00452332, 0.0658683,
 visible = false
 
 [node name="3T" parent="." instance=ExtResource("19_il2jm")]
-transform = Transform3D(-0.0629035, -0.285979, 0.065263, 0.00448587, 0.0658011, 0.29266, -0.293297, 0.0623404, -0.00952085, -32.0191, 1.3078, -120.014)
+transform = Transform3D(-0.0629034, -0.285979, 0.065263, 0.00448586, 0.0658011, 0.292661, -0.293296, 0.0623404, -0.00952085, -32.0191, 1.3078, -120.014)
+visible = false
+
+[node name="9T_2" parent="." instance=ExtResource("25_o3ebs")]
+transform = Transform3D(-0.0629034, -0.285979, 0.065263, 0.00448586, 0.0658011, 0.292661, -0.293296, 0.0623404, -0.00952085, -32.2718, 1.32618, -121.187)
+visible = false
+
+[node name="9C_2" parent="." instance=ExtResource("26_k83mh")]
+transform = Transform3D(-0.0629034, -0.285979, 0.065263, 0.00448586, 0.0658011, 0.292661, -0.293296, 0.0623404, -0.00952085, -32.2088, 1.32137, -120.894)
+visible = false
+
+[node name="QR_2" parent="." instance=ExtResource("27_qktwf")]
+transform = Transform3D(-0.0632234, -0.285894, 0.0653262, 0.00452332, 0.0658684, 0.292645, -0.293227, 0.0626584, -0.00957079, -32.1455, 1.31685, -120.601)
+visible = false
+
+[node name="2R_2" parent="." instance=ExtResource("17_bc84e")]
+transform = Transform3D(-0.0632234, -0.285894, 0.0653262, 0.00452332, 0.0658684, 0.292645, -0.293227, 0.0626584, -0.00957079, -32.0823, 1.31232, -120.308)
+visible = false
+
+[node name="AT_2" parent="." instance=ExtResource("28_bh8nc")]
+transform = Transform3D(-0.0629034, -0.285979, 0.065263, 0.00448586, 0.0658011, 0.292661, -0.293296, 0.0623404, -0.00952085, -32.0191, 1.3078, -120.014)
 visible = false

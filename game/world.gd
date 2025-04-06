@@ -27,6 +27,7 @@ var is_ending: bool = false
 const TIME_BETWEEN_ROUNDS = 5 # seconds
 
 var aux_time = 0
+var aux_time_2 = 0
 var level = 0
 # 0 - inceput, prea devreme
 # 1 - prima runda - de aici se poate da save
@@ -80,6 +81,7 @@ var eye_flag_2 = false;
 @onready var eye_3 = $eye3
 
 @onready var hud_1 = $HUD/round_1
+@onready var hud_2 = $HUD/round_2
 
 @onready var hud = $HUD/CanvasLayer
 @onready var subtitle = $HUD/CanvasLayer2
@@ -103,6 +105,7 @@ var is_starting = false
 
 var flag_round_1 = false
 var flag_round_2 = true
+var flag_round_3 = true
 
 var ending_round_1 = false
 var ending_round_2 = false
@@ -135,6 +138,7 @@ func _flash(delta: float):
 func _ready() -> void:
 	hud.visible = false
 	hud_1.visible = false
+	hud_2.visible = false
 	subtitle.visible = false
 	win_label.visible = false
 	lose_label.visible = false
@@ -222,6 +226,64 @@ func display_cards_1():
 	tip_time.visible = false
 	tip_money.visible = false
 	hud_1.visible = false
+	hud_2.visible = false
+
+func hide_cards_1():
+	bet = 0
+	var n7 = get_node('7N')
+	var r3 = get_node('3R')
+	var r2 = get_node('2R')
+	var c2 = get_node('2C')
+	var t3 = get_node('3T')
+	
+	n7.visible = false
+	r3.visible = false
+	r2.visible = false
+	c2.visible = false
+	t3.visible = false
+	
+	hud_1.visible = false
+	hud_2.visible = false
+
+func display_cards_2():
+	var n7 = get_node('9T_2')
+	var r3 = get_node('9C_2')
+	var r2 = get_node('QR_2')
+	var c2 = get_node('2R_2')
+	var t3 = get_node('AT_2')
+	
+	n7.visible = true
+	r3.visible = true
+	r2.visible = true
+	c2.visible = true
+	t3.visible = true
+	
+	subtitle.visible = true
+	tip_hl.visible = false
+	tip_time.visible = false
+	tip_money.visible = false
+	hud_1.visible = false
+	hud_2.visible = false
+
+func hide_cards_2():
+	var n7 = get_node('9T_2')
+	var r3 = get_node('9C_2')
+	var r2 = get_node('QR_2')
+	var c2 = get_node('2R_2')
+	var t3 = get_node('AT_2')
+	
+	n7.visible = false
+	r3.visible = false
+	r2.visible = false
+	c2.visible = false
+	t3.visible = false
+	
+	subtitle.visible = true
+	tip_hl.visible = false
+	tip_time.visible = false
+	tip_money.visible = false
+	hud_1.visible = false
+	hud_2.visible = false
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause") and is_menu == false:
@@ -329,19 +391,19 @@ func _process(delta: float) -> void:
 			display_cards_1()
 			is_starting = true
 			
-		subs.text = "Witch: Do I have a higher set?"
+		subs.text = "Witch: Do you have a higher set?"
 		subs.visible = true
 		
 		if game_elapsed_time > 12:
 			subs.text = "Witch: Hmmm... Maybe...."
 			
 		if game_elapsed_time > 17:
-			subs.text = "Witch: I'll chose... High! What\n do you think?"
+			subs.text = "Witch: Choose now! Higher or Lower?"
 			
 		if game_elapsed_time > 20:
 			tip_hl.visible = true
 			
-		if game_elapsed_time < 22:
+		if game_elapsed_time < 21:
 			return
 
 		if Input.is_key_pressed(KEY_H) and !ending_round_2:
@@ -355,7 +417,7 @@ func _process(delta: float) -> void:
 			tip_hl.visible = false
 
 		if ending_round_2 and game_elapsed_time > aux_time + 1:
-			subs.text = "You: Low!"
+			subs.text = "You: Lower!"
 
 		if ending_round_2 and game_elapsed_time > aux_time + 5:
 			subs.text = "Witch: I won, maybe you can\n turn back in time!"
@@ -371,14 +433,21 @@ func _process(delta: float) -> void:
 			subs.text = "Witch: Time is ticking..."
 			
 		if ending_round_2 and game_elapsed_time > aux_time + 15:
+			aux_time = game_elapsed_time
+			is_starting = false
+			
 			tip_hl.visible = false
 			tip_time.visible = false
+			
 			flag_round_1 = true
+			flag_round_2 = false
+			
 			hud_1.visible = false
 			no_rewind_aud.play()
+			hide_cards_1()
 			
 		if ending_round_1 and game_elapsed_time > aux_time + 1:
-			subs.text = "You: High!"
+			subs.text = "You: Higher!"
 
 		if ending_round_1 and game_elapsed_time > aux_time + 5:
 			subs.text = "Witch: What a lucky man!\n You need to win 4 more times!"
@@ -395,21 +464,28 @@ func _process(delta: float) -> void:
 			
 		if ending_round_1 and game_elapsed_time > aux_time + 15:
 			subs.text = "Witch: Just my imagination..."
+			aux_time = game_elapsed_time
+			
 			tip_hl.visible = false
 			tip_time.visible = false
+			
 			flag_round_1 = true
+			flag_round_2 = false
+			
 			hud_1.visible = false
 			no_rewind_aud.play()
+			aux_time = game_elapsed_time
+			is_starting = false
+			hide_cards_1()
 			
 		if Input.is_key_pressed(KEY_K) and (ending_round_1 or ending_round_2):
 			rewind_aud.play()
+			money_player = 5
+			get_node("HUD/CanvasLayer/Label").text = str(money_player)
+			
 			tip_time.visible = false
 			eye_elapsed = 0
 			eye_elapsed_2 = 0
-
-			flash_time = 1.
-			elapsed_time = 0.
-			flash_state = 0
 
 			ending_round_1 = false
 			ending_round_2 = false
@@ -420,18 +496,146 @@ func _process(delta: float) -> void:
 			eye.visible = false
 			eye_2.visible = false
 			
-			flash.visible = true
-			_flash(delta)
-			flash.visible = false
-			
 			game_elapsed_time = 4
+			aux_time = 4
 			subs.visible = false
-			
-			money_player = 5
-			get_node("HUD/CanvasLayer/Label").text = str(money_player)
 			
 			eye_time_to_start = game_elapsed_time + randi() % 50
 			eye_time_to_start_2 = game_elapsed_time + randi() % 50
+			is_starting = false
+			
+	if game_elapsed_time > aux_time + 5 and !flag_round_2:
+		subs.text = "Witch: Remember, first to ten coins lives"
+			
+		if game_elapsed_time > aux_time + 10:
+			subs.text = "Witch: We are starting..."
+				
+			if !is_starting:
+				display_cards_2()
+				is_starting = !is_starting
+				ending_round_1 = false
+				ending_round_2 = false
+			
+		if game_elapsed_time > aux_time + 15:
+			subs.text = "Witch: Shall you lose this, I'll \nlet you with 3 coins"
+			
+		if game_elapsed_time > aux_time + 20:
+			subs.text = "Witch: But if you win, you'll have \nseven"
+		
+		if game_elapsed_time > aux_time + 25:
+			tip_hl.visible = true
+			subs.text = "You: What? Why-"
+			
+		if game_elapsed_time > aux_time + 27:
+			subs.text = "Witch: Higher or Lower?"
+			
+		if game_elapsed_time < aux_time + 28:
+			return
+
+		if Input.is_key_pressed(KEY_H) and !ending_round_2:
+			ending_round_1 = true
+			tip_hl.visible = false
+			aux_time_2 = game_elapsed_time
+		
+		if Input.is_key_pressed(KEY_L) and !ending_round_1:
+			ending_round_2 = true
+			tip_hl.visible = false
+			aux_time_2 = game_elapsed_time
+
+		if ending_round_2 and game_elapsed_time > aux_time_2 + 5:
+			subs.text = "You: Lower!"
+
+		if ending_round_2 and game_elapsed_time > aux_time_2 + 8:
+			subs.text = "Witch: I won, maybe you can\n turn back in time!"
+			hud_2.visible = true
+			money_player = 3
+			get_node("HUD/CanvasLayer/Label").text = str(money_player)
+
+		if ending_round_2 and game_elapsed_time > aux_time_2 + 10:
+			tip_hl.visible = false
+			tip_time.visible = true
+
+		if ending_round_2 and game_elapsed_time > aux_time_2 + 13:
+			subs.text = "Witch: Time is ticking..."
+			
+		if ending_round_2 and game_elapsed_time > aux_time_2 + 18:
+			is_starting = false
+			
+			tip_hl.visible = false
+			tip_time.visible = false
+			
+			flag_round_3 = false
+			flag_round_2 = true
+			
+			hud_2.visible = false
+			no_rewind_aud.play()
+			hide_cards_2()
+			
+		if ending_round_1 and game_elapsed_time > aux_time_2 + 5:
+			subs.text = "You: Higher!"
+
+		if ending_round_1 and game_elapsed_time > aux_time_2 + 8:
+			subs.text = "Witch: Huh? Something is wrong!\n Have only 6"
+			hud_2.visible = true
+			money_player = 6
+			get_node("HUD/CanvasLayer/Label").text = str(money_player)
+
+		if ending_round_1 and game_elapsed_time > aux_time_2 + 10:
+			subs.text = "You: That's not fair!\n I've won twice"
+			tip_hl.visible = false
+			tip_time.visible = true
+
+		if ending_round_1 and game_elapsed_time > aux_time_2 + 13:
+			subs.text = "Witch: Same feeling... some\n superpower?"
+			
+		if ending_round_1 and game_elapsed_time > aux_time_2 + 18:
+			subs.text = "Witch: Hmmm..."
+			
+			tip_hl.visible = false
+			tip_time.visible = false
+			
+			flag_round_2 = true
+			flag_round_3 = false
+			
+			hud_2.visible = false
+			no_rewind_aud.play()
+
+			is_starting = false
+			hide_cards_2()
+			
+		if Input.is_key_pressed(KEY_K) and (ending_round_1 or ending_round_2):
+			rewind_aud.play()
+			money_player = 5
+			get_node("HUD/CanvasLayer/Label").text = str(money_player)
+			
+			tip_time.visible = false
+			eye_elapsed = 0
+			eye_elapsed_2 = 0
+
+			ending_round_1 = false
+			ending_round_2 = false
+
+			eye_audio.stop()
+			eye_audio_2.stop()
+			ending.stop()
+			
+			eye.visible = false
+			eye_2.visible = false
+			eye_3.visible = false
+			
+			subs.visible = false
+			tip_hl.visible = false
+			tip_time.visible = false
+			
+			subs.visible = true
+			
+			game_elapsed_time = aux_time + 5
+			flag_round_2 = false
+			flag_round_3 = true
+			
+			eye_time_to_start = game_elapsed_time + randi() % 50
+			eye_time_to_start_2 = game_elapsed_time + randi() % 50
+			is_starting = false
 			
 
 func toggle_fullscreen():
@@ -504,6 +708,13 @@ func _continue_game():
 		toggle_pause(0)
 		
 func _exit_to_menu():
+		hide_cards_1()
+		hide_cards_2()
+		game_elapsed_time = 0
+		flag_round_1 = false
+		flag_round_2 = true
+		
+		is_starting = false
 		hud.visible = false
 		subtitle.visible = false
 		win_label.visible = false
