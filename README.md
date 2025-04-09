@@ -10,7 +10,7 @@
 ## Concept
 
 **HiLo Escape** is a horror game where you have to guess if you have a higher or lower hand in poker than your opponent. The protagonist has the
-the choice to rewind or continue, but there is a chance he can die in any timeline.
+the choice to rewind the time or to continue with his choices, but there is always a chance he can die at any moment in any timeline.
 
 ## Behind the scenes
 The game was made between 5th April and 6th April under 21 hours by 3 students in the same team at *HackItAll*. Here is the list of the teammates:
