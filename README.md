@@ -17,9 +17,9 @@ The game was made between 5th April and 6th April under 21 hours by 3 students i
 
 | Name                      	| Group 	| % of<br>the<br>game | Most important role                	| Roles                        	|
 |---------------------------	|-------	|---------------------|------------------------------------	|------------------------------	|
-| Caraian Sonia-Adriana     	| 333CC 	| 33.33         	    | Creating assets and animations     	| Assets + Animations + Coding 	|
-| Gîrleanu Andrei-Alexandru 	| 333CC 	| 33.33         	    | Adding pause and menu logic        	| Animations + Coding          	|
-| Nenciu George-Robert      	| 333CC 	| 33.33         	    | Creating the scene and adding plot 	| Coding + Scene + Music       	|
+| Caraian Sonia-Adriana[^1]     	| 333CC 	| 33.33         	    | Creating assets and animations     	| Assets + Animations + Coding 	|
+| Gîrleanu Andrei-Alexandru[^2] 	| 333CC 	| 33.33         	    | Adding pause and menu logic        	| Animations + Coding          	|
+| Nenciu George-Robert[^3]      	| 333CC 	| 33.33         	    | Creating the scene and adding plot 	| Coding + Scene + Music       	|
 
 ## Disclaimer
 There are some assets with copyright partially modified. The project doesn't get any money and is used only for personal use. Here is a list with the
@@ -29,3 +29,7 @@ assets:<br>
 **Animated FPS Eye Monster**: https://sketchfab.com/3d-models/animated-fps-eye-monster-ef61a173cbfd40d887d71e83bafe6282<br>
 **Animated Casual Male**: https://godotmarketplace.com/shop/animated-casual-male/<br>
 Music from https://suno.com<br>
+
+[^1]: https://github.com/soniacaraian
+[^2]: https://github.com/andreialex6
+[^3]: https://github.com/robertnen
